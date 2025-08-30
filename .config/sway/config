@@ -75,7 +75,7 @@ bindsym $mod+f fullscreen
 
 bindsym $mod+space floating toggle
 
-# Status Bar
+### Status Bar
 
 bar {
     swaybar_command waybar

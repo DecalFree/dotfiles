@@ -3,29 +3,21 @@
 # Mod4 is Windows Key
 set $mod Mod4
 set $terminal alacritty
-set $menu rofi -monitor DP-3 -show drun
+set $menu rofi -show drun
 
 ### Output configuration
 
-output DP-3 resolution 2560x1440
-output DP-4 resolution 1920x1080
+output DP-2 resolution 1920x1200
 
-workspace 0 output DP-4
-workspace 1 output DP-3
-workspace 2 output DP-3
-workspace 3 output DP-3
-workspace 4 output DP-3
-workspace 5 output DP-3
-workspace 6 output DP-3
-workspace 7 output DP-3
-workspace 8 output DP-3
-workspace 9 output DP-3
-
-### Input configuration
-
-input "5426:170:Razer_Basilisk_V3_Pro" {
-    accel_profile "flat"
-}
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-2
 
 ### Key bindings
 
@@ -35,7 +27,7 @@ bindsym $mod+q kill
 
 bindsym $mod+r exec $menu
 
-bindsym $mod+v exec cliphist list | rofi -monitor DP-3 -dmenu | cliphist decode | wl-copy
+bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bindsym $mod+Shift+v exec cliphist wipe
 
 floating_modifier $mod normal
@@ -58,7 +50,6 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 0
 
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -69,11 +60,13 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 0
 
 bindsym $mod+f fullscreen
 
 bindsym $mod+space floating toggle
+
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
 
 ### Status Bar
 

@@ -40,6 +40,10 @@ Scope {
                         verticalCenter: parent.verticalCenter
                     }
                     spacing: 10
+
+                    WorkspaceWidget {
+                        screenName: modelData.name || modelData.model || ""
+                    }
                 }
 
                 Row {

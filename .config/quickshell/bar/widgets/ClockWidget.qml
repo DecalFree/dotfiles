@@ -7,18 +7,17 @@ Item {
     height: 35
 
     SystemClock {
-        id: clock
+        id: systemClock
         precision: SystemClock.Seconds
     }
 
     Text {
     anchors.centerIn: parent
-    text: Qt.formatDateTime(clock.date, "hh:mm  -  yyyy-MM-dd")
-    font.family: "JetBrains Mono"
+    text: Qt.formatDateTime(systemClock.date, "hh:mm  -  MM/dd/yyyy")
     font.pixelSize: clockWidget.height * 0.45
     color: "#FFFFFF"
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     renderType: Text.NativeRendering
-}
+    }
 }
